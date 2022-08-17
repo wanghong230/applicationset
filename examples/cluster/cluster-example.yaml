@@ -8,6 +8,7 @@ spec:
       selector:
         matchLabels:
           argocd.argoproj.io/secret-type: cluster
+          demo: demo
   template:
     metadata:
       name: '{{name}}-guestbook'
