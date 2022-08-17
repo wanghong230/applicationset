@@ -4,7 +4,10 @@ metadata:
   name: guestbook
 spec:
   generators:
-  - clusters: {}
+  - clusters:
+      selector:
+        matchLabels:
+          argocd.argoproj.io/secret-type: cluster
   template:
     metadata:
       name: '{{name}}-guestbook'
@@ -17,3 +20,8 @@ spec:
       destination:
         server: '{{server}}'
         namespace: guestbook
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+        automated:
+          selfHeal: true
