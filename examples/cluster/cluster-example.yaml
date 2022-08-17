@@ -7,7 +7,7 @@ spec:
   - clusters:
       selector:
         matchLabels:
-          akuity.io/argo-cd-cluster-name: != in-cluster
+          akuity.io/argo-cd-cluster-name: !=in-cluster
   template:
     metadata:
       name: '{{name}}-guestbook'
