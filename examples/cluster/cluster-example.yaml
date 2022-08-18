@@ -6,8 +6,8 @@ spec:
   generators:
   - clusters:
       selector:
-        matchLabels:
-          akuity.io/argo-cd-cluster-name: !=in-cluster
+        matchExpressions:
+        - {key: akuity.io/argo-cd-cluster-name, operator: NotIn, values: [in-cluster]}
   template:
     metadata:
       name: '{{name}}-guestbook'
