@@ -6,10 +6,10 @@ spec:
   generators:
   - list:
       elements:
-      - cluster: engineering-dev
-        url: http://cluster-engineering-dev:8001
       - cluster: engineering-prod
         url: http://cluster-engineering-prod:8001
+      - cluster: engineering-dev
+        url: http://cluster-engineering-dev:8001
   template:
     metadata:
       name: '{{cluster}}-guestbook'
